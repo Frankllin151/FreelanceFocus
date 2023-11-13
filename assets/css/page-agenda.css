@@ -1,0 +1,72 @@
+.page-agenda{
+    margin-top: 60px;
+    padding-left: 30px;
+   
+}
+.agendas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+    gap: 8px;
+}
+.agenda{
+    
+    cursor: pointer;
+    padding: 10px;
+    width: 300px;
+ border: 1px solid rgb(175, 175, 175);
+ border-radius: 5px;
+}
+
+.agenda-setting{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-of-event{
+   
+    padding-left: 20px;
+
+}
+
+.date-of-event h5{
+    font-size: 23px;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+.date-of-event span{
+    color: gray;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+.linkofmeeting{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.linkofmeeting span{
+    padding: 8px;
+}
+.linkofmeeting span a{
+    color: rgb(47, 127, 255);
+    text-decoration: none;
+}
+.linkofmeeting span i {
+    color: rgb(47, 127, 255);
+}
+.linkofmeeting span:nth-child(2){
+   border-radius: 5px;
+
+ border: 1px solid rgb(47, 127, 255);
+}
+.linkofmeeting span button{
+    border: none;
+    cursor: pointer;
+    color: rgb(47, 127, 255);
+}

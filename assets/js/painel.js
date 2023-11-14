@@ -19,7 +19,7 @@ function w3_open() {
   function includeHTML() {
     const headerElement = document.getElementById("header");
     const pageAgenda = document.getElementById("page-agenda");
-
+   const pageFinancas = document.getElementById("financas");
     fetch("header.html")
        .then(response => response.text())
        .then(data => headerElement.innerHTML = data);
@@ -28,5 +28,8 @@ function w3_open() {
        .then(response => response.text())
        .then(data => pageAgenda.innerHTML = data);
     
- }
+       fetch("financas.html")
+       .then(response => response.text())
+       .then(data => pageFinancas.innerHTML = data);
+      }
  window.onload = includeHTML;

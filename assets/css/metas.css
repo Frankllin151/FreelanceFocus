@@ -1,0 +1,68 @@
+
+*{
+
+}
+
+.contabilidade{
+    padding-left: 20px;
+    margin-top: 40px;
+}
+
+canvas {
+    border: 1px solid #ddd;
+    margin-top: 20px;
+  }
+
+  .layout-header{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 70px;
+    border-bottom: 1px solid rgb(175, 175, 175);
+}
+
+
+/*Dropdown*/
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropbtn {
+    background-color: #fff;
+    color: rgb(47, 127, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid rgb(47, 127, 255);
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    background-color: #ffffff;
+  }

@@ -20,6 +20,8 @@ function w3_open() {
     const headerElement = document.getElementById("header");
     const pageAgenda = document.getElementById("page-agenda");
    const pageFinancas = document.getElementById("financas");
+   const pageContralto = document.getElementById("contralto");
+   const pageContabilidade = document.getElementById("contabilidade");
     fetch("header.html")
        .then(response => response.text())
        .then(data => headerElement.innerHTML = data);
@@ -31,5 +33,16 @@ function w3_open() {
        fetch("financas.html")
        .then(response => response.text())
        .then(data => pageFinancas.innerHTML = data);
+
+
+
+       fetch("contralto.html")
+       .then(response => response.text())
+       .then(data => pageContralto.innerHTML = data);
+
+
+       fetch("contabilidade.html")
+       .then(response => response.text())
+       .then(data => pageContabilidade.innerHTML = data);
       }
  window.onload = includeHTML;

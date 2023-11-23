@@ -53,5 +53,55 @@ document.addEventListener('DOMContentLoaded' , function(){
         drodownContent.style.display = "none";
         }
     })
+
+
+
+   
+
 })
   
+
+function UpdateMeta(event){
+event.preventDefault();
+
+    let inputMeta = document.getElementsByName("metaInput")[0];
+    let valorMeta = inputMeta.value; 
+    
+    var valorMetaAnual = document.getElementById('inputMetaAnual'); 
+
+    valorMetaAnual.value  = valorMeta;
+
+    const valormesal = valorMeta / 12; 
+
+
+    const inputmetalMes = document.getElementById("inputmetalMes");
+
+    inputmetalMes.value = valormesal;
+   /* const Allmoth = [
+        'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'
+    ]*/
+
+
+   
+
+   
+
+
+
+
+}
+
+
+function ClickButtonAppearForm(){
+alert('hello');
+}
+
+
+
+
+
+
+
+
+
+

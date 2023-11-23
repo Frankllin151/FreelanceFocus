@@ -1,4 +1,7 @@
 
+@import url(/assets/css/pattern.css);
+
+
 *{
 
 }
@@ -65,4 +68,53 @@ canvas {
   
   .dropdown:hover .dropbtn {
     background-color: #ffffff;
+  }
+
+
+
+
+
+
+
+
+  /*Meta form anual*/
+
+  .form-page{
+ padding-left: 20px;
+  }
+.form-normal, .form-anual{
+  margin-top: 30px;
+}
+
+.form-anual{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+.form-cal , .calcular-count{
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 20px;
+  padding-right:20px ;
+}
+.btn-control{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+  .titulo-form{
+    margin-top:30px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px var(--cor-background-gray) solid;
+  }
+  .titulo-form div a{
+    text-decoration: none;
+    color: var(--cor-blue);
+    border-radius: 5px;
+    padding: 10px 20px;
+    border: 1px var(--cor-blue) solid;
   }

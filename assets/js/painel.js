@@ -20,7 +20,9 @@ function w3_open() {
     const headerElement = document.getElementById("header");
     const pageAgenda = document.getElementById("page-agenda");
    const pageFinancas = document.getElementById("financas");
+   const pageMetaAnual = document.getElementById("meta-anual");
    const pageContralto = document.getElementById("contralto");
+   const pageCreteContralto = document.getElementById("create-contralto");
    const pageContabilidade = document.getElementById("contabilidade");
     fetch("header.html")
        .then(response => response.text())
@@ -39,10 +41,21 @@ function w3_open() {
        fetch("contralto.html")
        .then(response => response.text())
        .then(data => pageContralto.innerHTML = data);
+       fetch("/parth/contralto/form-contralto.html")
+       .then(response => response.text())
+       .then(data => pageCreteContralto.innerHTML = data);
 
 
        fetch("contabilidade.html")
        .then(response => response.text())
        .then(data => pageContabilidade.innerHTML = data);
+      
+      
+      
+      
+      
+      fetch('/parth/meta/meta-form-anual.html')
+       .then(response => response.text())
+       .then(data => pageMetaAnual.innerHTML = data);
       }
  window.onload = includeHTML;

@@ -1,27 +1,4 @@
 
-<style>
-    .contraltos{
-     padding-left: 20px;
-    }
-    .contraltos label {
-         display: block;
-         margin-bottom: 5px;
-     }
-    .contraltos input, textarea {
-       width: 60%;
-         padding: 8px;
-         margin-bottom: 10px;
-         box-sizing: border-box;
-     }
-   .contraltos  button {
-         background-color: #4CAF50;
-         color: white;
-         padding: 10px 15px;
-         border: none;
-         border-radius: 4px;
-         cursor: pointer;
-     }
- </style>
  
 
 
@@ -32,8 +9,10 @@
 
 <div class="contraltos" id="main-site">
 
+   <div class="title-and-back">
     <h2>Contrato de Freelancer</h2>
-    <p>Preencha o formulário abaixo para contratar os services</p>
+ <div><a href="">Voltar</a></div>
+   </div>
     
     <form action="processar_contrato.php" method="post">
     
@@ -51,11 +30,17 @@
         <label for="descricao_projeto">Descrição do Projeto:</label>
         <textarea id="descricao_projeto" name="descricao_projeto" rows="4" required></textarea>
     
-        <label for="orcamento">Orçamento disponível:</label>
-        <input type="text" id="orcamento" name="orcamento" required>
+        <label for="orcamento">Orçamento:</label>
+        <select name="orcamento-choose" id="">
+            <option value="">R$800,00</option>
+            <option value="">R$2000,00</option>
+            <option value="">R$3000,00</option>
+
+        </select> <br>
+        <input type="text" id="orcamento" name="orcamento-personalizado" required>
     
         <label for="prazo_entrega">Prazo de entrega desejado:</label>
-        <input type="text" id="prazo_entrega" name="prazo_entrega" required>
+        <input type="date" id="prazo_entrega" name="prazo_entrega" required>
      <br>
         <button type="submit">Enviar Contrato</button>
     

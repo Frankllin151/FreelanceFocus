@@ -8,19 +8,19 @@
 
 <div class="create-inputs">
    <div class="inputs-pattern">
-       <input type="text" placeholder="Criar label Casa">  
+       <input id="input-house" type="text" placeholder="Criar label Casa">  
        
-       <button>Criar</button>
+       <button id="btn-house" onclick="CreateHouse()">Criar</button>
    </div>
 
    <div class="inputs-pattern">
-       <input type="text" placeholder="Criar label Empresa">   
+       <input id="input-company" onclick="CreateCompany()" type="text" placeholder="Criar label Empresa">   
        <button>Criar</button>
    </div>
 
 </div>
 
-        <form action="" method="post" class="table-box">
+        <div action="" method="post" class="table-box">
             <div class="table-row table-head">
                
                 <div class="table-cell first-cell">
@@ -39,14 +39,9 @@
             <div class="table-row">
                 
                 <div class="table-cell first-cell">
-                    <p>1200</p>
+                    <p>---</p>
                     <div class="gasto-house">
-                        <p>
-                            <label for="">Empregado:</label>
-                            <input type="text">
-                        </p>
-                        <p>Àgua: 400</p>
-                        <p>Comida: 400</p>
+                        
                     </div>
                 </div>
                 <div class="table-cell">
@@ -71,7 +66,9 @@
                
             </div>
             <div class="btn-dado"><button>Enviar</button></div>
-        </form>
+        </div>
 
     </div>
+
+
 </div>

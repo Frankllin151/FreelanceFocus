@@ -24,6 +24,32 @@ padding-left: 20px;
     border-radius: 5px;
   border: 1px solid var(--cor-gray);
 }
+
+.btn-dado{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 138px;
+}
+
+.btn-dado button{
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: var(--cor-blue);
+    color: #fff;
+    border: none;
+}
+
+.inputs-pattern button{
+  border-radius: 5px;
+  border: 1px solid var(--cor-blue);
+  padding: 10px;
+  color: var(--cor-blue);
+  cursor: pointer;
+}
+.btn-del{
+    border: none;
+}
 .table-row{
     display: table;
     width: 80%;

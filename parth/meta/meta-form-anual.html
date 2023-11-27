@@ -8,17 +8,17 @@
         <div class="form-normal">
             
                <div class="form-cal">
-                <input type="text" name="metaInput" placeholder="Digite sua meta anual">
+                <input class="input-number-meta" type="text" name="metaInput" placeholder="Digite sua meta anual">
            
-                <button onclick="UpdateMeta(event)">Enviar</button>
+                <button class="btn-btn-prima" id="btn-send" onclick="UpdateMeta(event)">Enviar</button>
                </div>
           
            <div class="calcular-count">
             <div>
-                <p>Antigir no Ano:</p><input type="number" id="inputMetaAnual" disabled>
+                <p>Antigir no Ano:</p><input class="input-number-meta" type="number" id="inputMetaAnual" disabled>
             </div>
            <div>
-            <p>Antigir todo mês: </p><input id="inputmetalMes" type="number" disabled>
+            <p>Antigir todo mês: </p><input class="input-number-meta" id="inputmetalMes" type="number" disabled>
            </div>
            </div>
 
@@ -26,48 +26,78 @@
           
         </div>
         <div class="btn-control">
-            <button id="makeControll" onclick="ClickButtonAppearForm()">Fazer Personalizado</button>
+            <button class="btn-btn-prima" id="makeControll" onclick="ClickButtonAppearForm()">Meta Personalizado</button>
         </div>
-        <div class="form-anual">
+        <!-----form-none---->
+        <div id="form-custom" class="form-anual ">
             <div class="form-personalizado " id="personalizadomake">Personalizado:</div>
-            <form action="processar_formulario.php" method="post">
-                <label for="jan">Janeiro:</label>
-                <input type="text" name="jan" id="jan" required><br>
+            
+            <form id="form-padding" action="processar_formulario.php" method="post">
+             <div id="closed-style"> <button id="btn-closed-modal" onclick="ClosedMOdalForm()" ><i class="bi bi-x-lg"></i></button>     </div>
+              <div class="grid-form">
+                <div><label for="jan">Janeiro:</label>
+                    <input class="input-metal-custom" type="text" name="jan" id="jan" required><br></div>
+            
+                  <div>
+                    <label for="fev">Fevereiro:</label>
+                    <input class="input-metal-custom" type="text" name="fev" id="fev" required><br>
+                  </div>
+            
+                  <div>
+                    <label for="mar">Março:</label>
+                    <input class="input-metal-custom" type="text" name="mar" id="mar" required><br>
+                  </div>
+            
+                <div>
+                    <label for="abr">Abril:</label>
+                    <input class="input-metal-custom" type="text" name="abr" id="abr" required><br>
+                </div>
+            
+                   <div>
+                    <label for="mai">Maio:</label>
+                    <input class="input-metal-custom" type="text" name="mai" id="mai" required><br>
+                   </div>
+            
+                 <div>
+                    <label for="jun">Junho:</label>
+                    <input class="input-metal-custom" type="text" name="jun" id="jun" required><br>
+                 </div>
+            
+                 <div>
+                    <label for="jul">Julho:</label>
+                    <input class="input-metal-custom" type="text" name="jul" id="jul" required><br>
+                 </div>
+            
+                   <div>
+                    <label for="ago">Agosto:</label>
+                    <input class="input-metal-custom" type="text" name="ago" id="ago" required><br>
+                   </div>
+            
+                   <div>
+                    <label for="set">Setembro:</label>
+                    <input class="input-metal-custom" type="text" name="set" id="set" required><br>
+                   </div>
+            
+                 <div>
+                    <label for="out">Outubro:</label>
+                    <input class="input-metal-custom" type="text" name="out" id="out" required><br>
+            
+                 </div>
+                 
+                 <div>
+                    <label for="nov">Novembro:</label>
+                    <input class="input-metal-custom" type="text" name="nov" id="nov" required><br>
+            
+                 </div>
+                   
+    
+                 <div>
+                    <label for="dez">Dezembro:</label>
+                    <input class="input-metal-custom" type="text" name="dez" id="dez" required><br>
+                 </div>
+              </div>
         
-                <label for="fev">Fevereiro:</label>
-                <input type="text" name="fev" id="fev" required><br>
-        
-                <label for="mar">Março:</label>
-                <input type="text" name="mar" id="mar" required><br>
-        
-                <label for="abr">Abril:</label>
-                <input type="text" name="abr" id="abr" required><br>
-        
-                <label for="mai">Maio:</label>
-                <input type="text" name="mai" id="mai" required><br>
-        
-                <label for="jun">Junho:</label>
-                <input type="text" name="jun" id="jun" required><br>
-        
-                <label for="jul">Julho:</label>
-                <input type="text" name="jul" id="jul" required><br>
-        
-                <label for="ago">Agosto:</label>
-                <input type="text" name="ago" id="ago" required><br>
-        
-                <label for="set">Setembro:</label>
-                <input type="text" name="set" id="set" required><br>
-        
-                <label for="out">Outubro:</label>
-                <input type="text" name="out" id="out" required><br>
-        
-                <label for="nov">Novembro:</label>
-                <input type="text" name="nov" id="nov" required><br>
-        
-                <label for="dez">Dezembro:</label>
-                <input type="text" name="dez" id="dez" required><br>
-        
-                <input type="submit" value="Enviar">
+               <div class="btn-content"> <input id="btn-enviar-custom" type="submit" value="Enviar"></div>
             </form>
         
         </div>

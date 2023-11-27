@@ -93,10 +93,16 @@ event.preventDefault();
 
 
 function ClickButtonAppearForm(){
-alert('hello');
+
+    const FormCustom =  document.getElementById("form-custom");
+    FormCustom.classList.remove('form-none');
+
 }
 
-
+function ClosedMOdalForm(){
+    const FormCustom =  document.getElementById("form-custom");
+    FormCustom.classList.add('form-none');
+}
 
 
 

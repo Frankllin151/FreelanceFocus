@@ -24,6 +24,7 @@ function w3_open() {
    const pageContralto = document.getElementById("contralto");
    const pageCreteContralto = document.getElementById("create-contralto");
    const pageContabilidade = document.getElementById("contabilidade");
+   const CreateContabilidade = document.getElementById('create-contabilidade');
     fetch("header.html")
        .then(response => response.text())
        .then(data => headerElement.innerHTML = data);
@@ -49,7 +50,9 @@ function w3_open() {
        fetch("contabilidade.html")
        .then(response => response.text())
        .then(data => pageContabilidade.innerHTML = data);
-      
+       fetch("/parth/contabilidade/form-contabilidade.html")
+       .then(response => response.text())
+       .then(data => CreateContabilidade.innerHTML = data);
       
       
       
@@ -57,5 +60,19 @@ function w3_open() {
       fetch('/parth/meta/meta-form-anual.html')
        .then(response => response.text())
        .then(data => pageMetaAnual.innerHTML = data);
-      }
+  }
+
+  
+     
+
+
  window.onload = includeHTML;
+
+
+
+
+
+
+
+
+ 

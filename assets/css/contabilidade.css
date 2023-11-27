@@ -9,7 +9,21 @@ padding-left: 20px;
    
     margin: 50px auto;
 }
+.create-inputs{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 138px;
+   padding-left: 138px;
+}
 
+.inputs-pattern input{
+    outline: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 5px;
+  border: 1px solid var(--cor-gray);
+}
 .table-row{
     display: table;
     width: 80%;
@@ -96,4 +110,12 @@ padding-right: 30px;
     text-decoration: none;
     color: var(--cor-blue);
     border: 1px solid var(--cor-blue);
+}
+
+
+
+/*Form contabilidade*/
+
+.page-form-contabilidade{
+    padding-left: 20px;
 }

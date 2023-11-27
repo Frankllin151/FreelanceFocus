@@ -90,6 +90,33 @@ canvas {
   padding-left: 100px;
   padding-right: 100px;
 }
+.form-none{
+  display: none;
+}
+
+.grid-form{
+  display: grid;
+  gap: 8px;
+ 
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+}
+.grid-form div label{
+  display: flex;
+  justify-content: last baseline;
+}
+.form-padding{
+  padding: 10px 40px;
+}
+#btn-closed-modal{
+  border-radius: 5px;
+  
+  border: 2px solid var(--cor-background-gray);
+}
+
+#btn-closed-modal i {
+  color: #4c4c4c;
+  font-size: 20px;
+}
 .form-cal , .calcular-count{
   display: flex;
   justify-content: space-evenly;
@@ -100,6 +127,35 @@ canvas {
   margin-top: 40px;
   display: flex;
   justify-content: center;
+}
+.btn-btn-prima{
+  border: none;
+  background-color: var(--cor-blue);
+  color: #fff;
+  padding: 10px 20px;
+border-radius: 5px;
+cursor: pointer;
+}
+.input-number-meta , .input-metal-custom{
+  outline: none;
+  padding: 10px 20px;
+  font-size: 15px;
+  border-radius: 5px;
+border: 1px solid var(--cor-gray);
+}
+.btn-content{
+  display: flex;
+ justify-content: end;
+}
+
+#btn-enviar-custom{
+ cursor: pointer;
+  margin-top: 10px;
+  color: #ddd;
+  padding: 10px 20px;
+  border: none;
+  background: var(--cor-blue);
+  border-radius: 5px;
 }
 
   .titulo-form{

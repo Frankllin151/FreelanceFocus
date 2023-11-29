@@ -3,43 +3,43 @@
 
 
 function CreateHouse(){
-    const nomeInputValue = document.getElementById("input-house").value;
+    const namevalueINput = document.getElementById("input-house").value;
     
-   if(nomeInputValue.trim() === ""){
+   if(namevalueINput.trim() === ""){
      alert("Por favor, digite o nome da label")
    return;
     }
 
-   let novoParagrafo = document.createElement("p");
-   novoParagrafo.setAttribute("id" , nomeInputValue);
+   let newTagP = document.createElement("p");
+   newTagP.setAttribute("id" , namevalueINput);
+  newTagP.setAttribute("id" , namevalueINput);
+    
+    let newLabel = document.createElement("label");
+    newLabel.textContent = namevalueINput +":"; 
 
-    // Criar um novo <label> dentro do bloco <p>
-    let novoLabel = document.createElement("label");
-    novoLabel.textContent = nomeInputValue +":"; // Use o valor como texto do label
+ 
+    let newInput = document.createElement("input");
+    newInput.setAttribute("type", "text");
+    newInput.setAttribute("name", namevalueINput);
 
-    // Criar um novo <input> dentro do bloco <p>
-    let novoInput = document.createElement("input");
-    novoInput.setAttribute("type", "text");
-    novoInput.setAttribute("name", nomeInputValue);
-
-    let novoButton = document.createElement("button");
+    let NewTagButton = document.createElement("button");
     let iconX = document.createElement("i");
     iconX.classList.add("bi")
     iconX.classList.add("bi-x-circle")
-    novoButton.appendChild(iconX);
-    novoButton.setAttribute("id" , nomeInputValue);
-    novoButton.setAttribute("onclick" , "Remove(event)")
-    novoButton.classList.add("btn-del-house");
-    novoButton.classList.add("indetifier");
-    // Adicionar o <label> e o <input> ao bloco <p>
-    novoParagrafo.appendChild(novoLabel);
-    novoParagrafo.appendChild(novoInput);
-    novoParagrafo.appendChild(novoButton);
+    NewTagButton.appendChild(iconX);
+    NewTagButton.setAttribute("id" , namevalueINput);
+    NewTagButton.setAttribute("onclick" , "Remove(event)")
+    NewTagButton.classList.add("btn-del-house");
+    NewTagButton.classList.add("indetifier");
 
-    // Adicionar o bloco <p> ao elemento com o ID "container"
-    document.querySelector(".gasto-house").appendChild(novoParagrafo);
+    newTagP.appendChild(newLabel);
+    newTagP.appendChild(newInput);
+    newTagP.appendChild(NewTagButton);
 
-    // Limpar o campo de entrada para o próximo nome
+   
+    document.querySelector(".gasto-house").appendChild(newTagP);
+
+
     document.getElementById("input-house").value = "";
 
    
@@ -56,13 +56,19 @@ buttonDel.forEach(function(element){
 })
 
 function Remove(event){
-let ElementoButton = event.target.closest('indetifier');
+  let ElementoButton = event.target.closest('.indetifier');
  
- if(ElementoButton) {
-var idButton = ElementoButton.getAttribute("id");
- }
-alert(idButton);
+  if(ElementoButton){
+    var idButton = ElementoButton.getAttribute("id");
 
+    if(idButton){
+      var elementoToRemover = document.getElementById(idButton);
+
+      if(elementoToRemover){
+        elementoToRemover.remove();
+      }
+    }
+  }
 }
 
 
@@ -72,49 +78,52 @@ alert(idButton);
 
 
 function CreateCompany(){
-  var nomeInputValue = document.getElementById("input-company").value;
+  
  
   
- if(nomeInputValue.trim() === ""){
-   alert("Por favor, digite o nome da label")
-   return;
- }
-
- let novoParagrafo = document.createElement("p");
- novoParagrafo.setAttribute("id" , nomeInputValue);
-
-  // Criar um novo <label> dentro do bloco <p>
-  let novoLabel = document.createElement("label");
-  novoLabel.textContent = nomeInputValue +":"; // Use o valor como texto do label
-
-  // Criar um novo <input> dentro do bloco <p>
-  let novoInput = document.createElement("input");
-  novoInput.setAttribute("type", "text");
-  novoInput.setAttribute("name", nomeInputValue);
+  
+ 
 
   
-  //
-  let novoButton = document.createElement("button");
-  let iconX = document.createElement("i");
-  iconX.classList.add("bi")
-  iconX.classList.add("bi-x-circle")
-  novoButton.appendChild(iconX);
-  novoButton.setAttribute("id" , nomeInputValue);
-  novoButton.setAttribute("onclick" , Remove)
-  novoButton.classList.add("btn-del");
-  
-  
 
-  novoParagrafo.appendChild(novoLabel);
-  novoParagrafo.appendChild(novoInput);
-  novoParagrafo.appendChild(novoButton); 
+  const namevalueINput = document.getElementById("input-company").value;
+    
+  if(namevalueINput.trim() === ""){
+    alert("Por favor, digite o nome da label")
+  return;
+   }
+
+  let newTagP = document.createElement("p");
+  newTagP.setAttribute("id" , namevalueINput);
+ newTagP.setAttribute("id" , namevalueINput);
+   
+   let newLabel = document.createElement("label");
+   newLabel.textContent = namevalueINput +":"; 
+
+
+   let newInput = document.createElement("input");
+   newInput.setAttribute("type", "text");
+   newInput.setAttribute("name", namevalueINput);
+
+   let NewTagButton = document.createElement("button");
+   let iconX = document.createElement("i");
+   iconX.classList.add("bi")
+   iconX.classList.add("bi-x-circle")
+   NewTagButton.appendChild(iconX);
+   NewTagButton.setAttribute("id" , namevalueINput);
+   NewTagButton.setAttribute("onclick" , "Remove(event)")
+   NewTagButton.classList.add("btn-del-house");
+   NewTagButton.classList.add("indetifier");
+
+   newTagP.appendChild(newLabel);
+   newTagP.appendChild(newInput);
+   newTagP.appendChild(NewTagButton);
 
   
-  document.querySelector(".gasto-empresa").appendChild(novoParagrafo);
+   document.querySelector(".gasto-empresa").appendChild(newTagP);
 
-  
-  document.getElementById("input-company").value = "";
 
+   document.getElementById("input-house").value = "";
  
 }
 

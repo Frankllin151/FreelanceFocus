@@ -7,7 +7,8 @@ function CreateHouse(){
     
    if(nomeInputValue.trim() === ""){
      alert("Por favor, digite o nome da label")
-   }
+   return;
+    }
 
    let novoParagrafo = document.createElement("p");
    novoParagrafo.setAttribute("id" , nomeInputValue);
@@ -26,7 +27,7 @@ function CreateHouse(){
     iconX.classList.add("bi")
     iconX.classList.add("bi-x-circle")
     novoButton.appendChild(iconX);
-    novoButton.setAttribute("data-key" , nomeInputValue);
+    novoButton.setAttribute("id" , nomeInputValue);
     novoButton.setAttribute("onclick" , "Remove(event)")
     novoButton.classList.add("btn-del-house");
     novoButton.classList.add("indetifier");
@@ -55,12 +56,12 @@ buttonDel.forEach(function(element){
 })
 
 function Remove(event){
-let ElementoButton = event.target.closest('btn-del-house');
+let ElementoButton = event.target.closest('indetifier');
  
  if(ElementoButton) {
-var idButton = ElementoButton.getAttribute("data-key");
+var idButton = ElementoButton.getAttribute("id");
  }
- alert(idButton);
+alert(idButton);
 
 }
 
@@ -76,6 +77,7 @@ function CreateCompany(){
   
  if(nomeInputValue.trim() === ""){
    alert("Por favor, digite o nome da label")
+   return;
  }
 
  let novoParagrafo = document.createElement("p");

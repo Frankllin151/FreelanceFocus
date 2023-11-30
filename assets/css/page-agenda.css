@@ -1,3 +1,5 @@
+@import url(/assets/css/pattern.css);
+
 .page-agenda{
    
     padding-left: 30px;
@@ -11,10 +13,12 @@
     gap: 8px;
 }
 .agenda{
-    height: auto;
+
+    margin-bottom: 0px;
+  height: auto;
 }
 .agenda-apper{
-
+background-color: rgb(255, 255, 255);
     cursor: pointer;
     padding: 10px;
  
@@ -99,23 +103,26 @@
 }
 
 .optionedit{
-    background-color: white;
-    border: 1px solid rgb(175, 175, 175);
+   
+   
  
     display: grid;
     position: relative;
     top: -180px;
-    
+    height: 0px;
     left: 280px;
     width: 200px;
+    padding: 10px;
     border-radius: 5px;
-    height: 180px;
+    
 }
 .none-option{
     display: none;
 }
 .optionedit span{
-    padding: 8px;  
+    padding: 10px;
+
+    background-color: white;  
 
 }
 .optionedit span a{
@@ -124,4 +131,42 @@ color: rgb(46, 46, 46);
 }
 .optionedit span:hover{
     background-color: rgb(175, 175, 175);
+}
+
+
+
+/*form page Agenda*/
+.page-form-agenda{
+    padding:20px;
+}
+
+.form-input-agenda {
+    height: 500px;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+justify-content: last baseline;
+}
+
+.form-input-agenda form{
+    display: flex;
+width: 30%;
+    flex-direction: column;
+    
+}
+.form-input-agenda form input{
+    background-color: var(--cor-background-gray);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.form-input-agenda form input::placeholder{
+    font-family: sans-serif;
+}
+
+.form-input-agenda form #btn-send{
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--cor-blue);
 }

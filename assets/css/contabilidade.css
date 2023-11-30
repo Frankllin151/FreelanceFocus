@@ -145,3 +145,10 @@ padding-right: 30px;
 .page-form-contabilidade{
     padding-left: 20px;
 }
+#buton-cal{
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--cor-blue);
+    border:1px solid var(--cor-blue);
+}

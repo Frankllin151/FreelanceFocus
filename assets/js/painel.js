@@ -19,12 +19,14 @@ function w3_open() {
   function includeHTML() {
     const headerElement = document.getElementById("header");
     const pageAgenda = document.getElementById("page-agenda");
-   const pageFinancas = document.getElementById("financas");
+   const PageAgendaForm = document.getElementById("page-form-agenda");
+    const pageFinancas = document.getElementById("financas");
    const pageMetaAnual = document.getElementById("meta-anual");
    const pageContralto = document.getElementById("contralto");
    const pageCreteContralto = document.getElementById("create-contralto");
    const pageContabilidade = document.getElementById("contabilidade");
    const CreateContabilidade = document.getElementById('create-contabilidade');
+   
     fetch("header.html")
        .then(response => response.text())
        .then(data => headerElement.innerHTML = data);
@@ -32,6 +34,9 @@ function w3_open() {
        fetch("agenda-prio.html")
        .then(response => response.text())
        .then(data => pageAgenda.innerHTML = data);
+       fetch("/parth/agenda/agenda-form.html")
+       .then(response => response.text())
+       .then(data => PageAgendaForm.innerHTML = data);
     
        fetch("financas.html")
        .then(response => response.text())

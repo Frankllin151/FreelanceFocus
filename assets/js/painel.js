@@ -26,6 +26,7 @@ function w3_open() {
    const pageCreteContralto = document.getElementById("create-contralto");
    const pageContabilidade = document.getElementById("contabilidade");
    const CreateContabilidade = document.getElementById('create-contabilidade');
+   const pageLogin = document.getElementById('page-login');
    
     fetch("header.html")
        .then(response => response.text())
@@ -65,6 +66,11 @@ function w3_open() {
       fetch('/parth/meta/meta-form-anual.html')
        .then(response => response.text())
        .then(data => pageMetaAnual.innerHTML = data);
+
+
+       fetch('login.html')
+       .then(response => response.text())
+       .then(data => pageLogin.innerHTML = data);
   }
 
   

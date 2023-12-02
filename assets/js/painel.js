@@ -27,10 +27,15 @@ function w3_open() {
    const pageContabilidade = document.getElementById("contabilidade");
    const CreateContabilidade = document.getElementById('create-contabilidade');
    const pageLogin = document.getElementById('page-login');
+   const pageRegister = document.getElementById('registerpage');
    
     fetch("header.html")
        .then(response => response.text())
        .then(data => headerElement.innerHTML = data);
+
+       fetch("register.html")
+       .then(response => response.text())
+       .then(data => pageRegister.innerHTML = data);
 
        fetch("agenda-prio.html")
        .then(response => response.text())

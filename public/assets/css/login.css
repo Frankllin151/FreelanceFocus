@@ -1,0 +1,106 @@
+@import url(/assets/css/pattern.css);
+
+
+
+.page-login-form , .page-register{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+#img-icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.btn-login-google{
+    display: flex;
+    text-align: center;
+}
+.form div a{
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    color: var(--cor-gray);
+}
+.form div a small{
+   
+    
+    margin-top: 5px;
+}
+.form div{
+    border-radius: 5px;
+    border: 1px solid var(--cor-background-gray);
+    padding: 3px 50px;
+}
+#btn-send , #btn-register-send{
+    cursor: pointer;
+    margin-top: 10px;
+    color: #fff;
+    background-color: var(--cor-blue);
+}
+.form form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form form input{
+    border-radius: 5px;
+    border: 1px solid var(--cor-background-gray);
+    padding: 8px 5px;
+}
+.form form input:focus{
+   outline: none;
+   border: 1px solid var(--cor-blue);
+}
+.form form label{
+    color: var(--cor-gray);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+
+
+/*page Register*/
+.form-register{
+
+}
+.form-register  div {
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    color: var(--cor-gray);
+}
+.form-register div a small{
+   
+    
+    margin-top: 5px;
+}
+
+
+
+.form-register form{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-register form input{
+    border-radius: 5px;
+    border: 1px solid var(--cor-background-gray);
+    padding: 8px 10px;
+}
+.form-register form input:focus{
+   outline: none;
+   border: 1px solid var(--cor-blue);
+}
+.form-register form label{
+    color: var(--cor-gray);
+    font-size: 15px;
+    font-weight: bold;
+}
+
+

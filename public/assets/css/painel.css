@@ -1,0 +1,138 @@
+body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#main-header {
+    transition: margin-left 0.5s;
+    padding: 16px;
+   
+   
+}
+
+#mySidebar {
+    background-color: #fff;
+    border-right: 1px solid rgb(150, 150, 150);
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+
+}
+.closebtn{
+    color: #101010;
+    text-decoration: none;
+}
+.btns-auth {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.btns-auth a {
+
+    margin: 10px;
+    background-color: #007BFF;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+
+    transition: 0.3s;
+    
+}
+.btns-auth a:hover {
+   color: #ccc;
+
+}
+
+#mySidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#openNav {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#openNav i{
+ font-size: 24px;
+}
+#sidebarHeader{
+   padding-left: 20px;
+}
+#sidebarHeader p{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+   
+}
+
+.bar-search{
+background-color: #ccc;
+padding: 10px;
+padding-left: 20px;
+padding-right: 20px;
+width: 300px;
+display: flex;
+border-radius: 5px;
+justify-content: space-between;
+}
+
+.bar-search input{
+    border: none;
+    outline: none;
+    background-color: #ccc;
+}
+
+.bar-search input::placeholder{
+    font-size: 14px;
+}
+
+
+.bar-search span{
+   color: #101010;
+    font-size: 14px;
+} 
+
+.rooms-organize{
+    gap: 8px;
+    display: grid;
+   
+}
+.rooms-organize span{
+    padding-left: 20px;
+    margin-top: 10px;
+    padding-top: 10px ;
+    padding-bottom: 10px;
+}
+.rooms-organize span:hover{
+  
+    background-color: #ccc;
+}
+
+.rooms-organize span i{
+font-size: 30px;
+color: #007BFF;
+}
+.rooms-organize span a{
+    text-decoration: none;
+    color: #101010;
+    font-weight: 300;
+    font-family: sans-serif;
+    font-size: 18px;
+}

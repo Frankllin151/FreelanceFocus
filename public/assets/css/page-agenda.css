@@ -1,0 +1,172 @@
+@import url(/assets/css/pattern.css);
+
+.page-agenda{
+   
+    padding-left: 30px;
+    margin-top: 60px;   
+}
+
+.agendas{
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 8px;
+}
+.agenda{
+
+    margin-bottom: 0px;
+  height: auto;
+}
+.agenda-apper{
+background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    padding: 10px;
+ 
+ border: 1px solid rgb(175, 175, 175);
+ border-radius: 5px;
+}
+
+.agenda-setting{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.agenda-setting i{
+ font-size: 20px;
+ color: rgb(46, 46, 46);
+}
+.agenda-setting input{
+ font-size: 20px;
+}
+
+.date-of-event{
+   
+    padding-left: 20px;
+
+}
+
+.date-of-event h5{
+    font-size: 23px;
+    font-weight: 300;
+    font-family: sans-serif;
+}
+.date-of-event span{
+    color: gray;
+    font-size: 14px;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+.linkofmeeting{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.linkofmeeting span{
+    padding: 8px;
+}
+.linkofmeeting span a{
+    color: rgb(47, 127, 255);
+    text-decoration: none;
+}
+.linkofmeeting span i {
+    color: rgb(47, 127, 255);
+}
+.linkofmeeting span:nth-child(2){
+   border-radius: 5px;
+
+ border: 1px solid rgb(47, 127, 255);
+}
+.linkofmeeting span button{
+    border: none;
+    cursor: pointer;
+    color: rgb(47, 127, 255);
+}
+
+.new-event{
+    border-bottom: 1px solid rgb(175, 175, 175);
+    padding-left: 20px;
+    padding-right: 20px;
+    display:flex;
+    justify-content: space-between;
+}
+.new-event div a {
+    border: 1px solid rgb(47, 127, 255);
+    text-decoration: none;
+    color: rgb(47, 127, 255);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.optionedit{
+   
+   
+ 
+    display: grid;
+    position: relative;
+    top: -180px;
+    height: 0px;
+    left: 280px;
+    width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    
+}
+.none-option{
+    display: none;
+}
+.optionedit span{
+    padding: 10px;
+
+    background-color: white;  
+
+}
+.optionedit span a{
+text-decoration: none;
+color: rgb(46, 46, 46);
+}
+.optionedit span:hover{
+    background-color: rgb(175, 175, 175);
+}
+
+
+
+/*form page Agenda*/
+.page-form-agenda{
+    padding:20px;
+}
+
+.form-input-agenda {
+    height: 500px;
+    display: flex;
+    align-items: center;
+  justify-content: center;
+justify-content: last baseline;
+}
+
+.form-input-agenda form{
+    display: flex;
+width: 30%;
+    flex-direction: column;
+    
+}
+.form-input-agenda form input{
+    background-color: var(--cor-background-gray);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.form-input-agenda form input::placeholder{
+    font-family: sans-serif;
+}
+
+.form-input-agenda form #btn-send{
+    color: #fff;
+    cursor: pointer;
+    background-color: var(--cor-blue);
+}

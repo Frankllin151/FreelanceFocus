@@ -6,7 +6,7 @@ RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # Ative o módulo rewrite do Apache
 RUN a2enmod rewrite
-#RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
+RUN sed -i 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/000-default.conf
 
 # Copie os arquivos da aplicação para o diretório do Apache
 COPY  . /var/www/html

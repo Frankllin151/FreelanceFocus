@@ -3,12 +3,19 @@ namespace src\controllers;
 
 use \core\Controller;
 
+use Google\Client;
 
 class HomeController extends Controller {
 
     public function index() 
     {
-        $this->render('home', ['nome' => 'Frankllin']);
+        echo 'home';
+       // $code  = $_GET['code'];
+       
+      //  $client = new Client();
+    //    $token = $client->fetchAccessTokenWithAuthCode($code);
+
+    
     }
 
     public function sobre() 

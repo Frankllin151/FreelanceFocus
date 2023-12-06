@@ -10,6 +10,7 @@ class HomeController extends Controller {
     public function index() 
     {
         echo 'home';
+        
        // $code  = $_GET['code'];
        
       //  $client = new Client();

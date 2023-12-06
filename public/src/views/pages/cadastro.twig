@@ -13,7 +13,7 @@
             <label for="">Nome:</label>
             <input type="text" name="name-register">
             <label for="">Email</label>
-            <input type="email" name="email-register">
+           <input type="email" name="email-register" {% if emailgoogle is defined %}value="{{ emailgoogle }}" readonly{% endif %}>
             <label for="">Senha:</label>
             <input type="password" name="password-register">
             <input  id="btn-register-send" type="submit" value="Cadastrar">

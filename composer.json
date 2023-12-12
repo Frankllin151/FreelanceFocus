@@ -3,7 +3,8 @@
         
         "twig/twig": "^3.8",
         "google/apiclient": "^2.15.0",
-        "guzzlehttp/guzzle": "^7.8"
+        "guzzlehttp/guzzle": "^7.8",
+        "clancats/hydrahon": "^1.1"
         
     },
     "autoload": {

@@ -14,7 +14,7 @@ class Register extends Model {
     }
 
     public function setId($id) {
-        $this->id = trim($id);
+        $this->id = $id;
     }
 
     // Getter and Setter to name
@@ -23,7 +23,7 @@ class Register extends Model {
     }
 
     public function setName($name) {
-        $this->name = strtolower(trim($name));
+        $this->name = $name;
     }
 
     // Getter and Setter to email
@@ -32,7 +32,7 @@ class Register extends Model {
     }
 
     public function setEmail($email) {
-        $this->email = strtolower(trim($email));
+        $this->email = $email;
     }
 
     // Getter and Setter to password
@@ -45,12 +45,5 @@ class Register extends Model {
     }
 }
 
-interface RegisterDao {
-    public function postActionCadrastro(Register $u);
-   // public function findAll();
-    public function findByEmail($emailpost);
-   // public function findById($id);
-    //public function update(Register $u);
-    //public function delete($id);
-}
+
 

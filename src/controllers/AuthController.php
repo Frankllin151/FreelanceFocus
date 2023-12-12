@@ -3,21 +3,26 @@ namespace src\controllers;
 
 
 
+//require_once "./src/handlers/RegisterHandle.php";
 
 use core\Controller;
 use core\Database;
+use src\Config;
 use Google\Client;
 use Google\Service;
 use GuzzleHttp\Client as GuzzleClient;
+
 use src\models\Register;
+use src\handlers;
+use src\handlers\RegisterHandler;
 
-use src\models\RegisterDao;
 
-class AuthController extends  Controller implements RegisterDao {
+class AuthController extends  Controller  {
  private $db;
   public function __construct()
   {
     $this->db = new Database();
+     //$pdo = $this->db->getInstance();
   }
 
   public function LayoutLogin()
@@ -60,50 +65,31 @@ class AuthController extends  Controller implements RegisterDao {
   }
 
 
-  public function findByEmail($emailpost){
-   
-    $email = $_POST['email-register'];
-    
-
-    $pdo = $this->db->getInstance();
-    
-    
-    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
-    
-
-    $stmt->bindValue(':email', $email);
-    $stmt->execute();
-
-   
-    if($stmt->rowCount() > 0 ){
-        
-        $data = $stmt->fetch();
-
-     
-        $register = new Register();
-        $register->setName($data['name']);
-        $register->setEmail($data['email']);
-        $register->setPassword($data['password']);
-        
-        
-        print_r($register);
-    } else {
-        return false;
-    }
-
-  }
+  
 
    public function postActionCadrastro()
    {
-    $emailpost = $_POST['email-register'];
-    //$pdo = $this->db->getInstance();
-    $register = new RegisterDao();
    
-   if( $register->findByEmail($emailpost) === false){
-        echo 'email  já registrado';
+    $name = $_POST['name-register'] ?? null;
+    $email = $_POST['email-register'] ?? null;
+    $password = $_POST['password'] ?? null;
+   
+   
+   
+    $register = new Register();
+    $register = new RegisterHandler();
+   
+   if( $register->findByEmail($email) === false){
+    $user = new Register();
+    $user->setName($name);
+    $user->setEmail($email);
+    $user->setPassword($password);
+        $register->InserirUsers($user);
    } else{
-     print_r($_POST);
+    $base = Config::BASE_DIR;
+   $this->render('home');
    }
+   
      
    }
 

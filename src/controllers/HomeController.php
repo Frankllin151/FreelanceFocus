@@ -9,12 +9,8 @@ class HomeController extends Controller {
 
     public function index() 
     {
-   echo  phpversion();
-        
-       // $code  = $_GET['code'];
-       
-      //  $client = new Client();
-    //    $token = $client->fetchAccessTokenWithAuthCode($code);
+    
+        $this->render('home');
 
     
     }

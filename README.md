@@ -2,11 +2,11 @@
 
 ## **Changelog**
 
-### **[stil whiout version] - (06/12/2023)**
+### **[stil whiout version] - (12/12/2023)**
 
 ## **Type of Commit**
 
 
-- **chore:** SystemRegisterApigoogle.
+- **mino:** SystemRegisterApi.
 
 

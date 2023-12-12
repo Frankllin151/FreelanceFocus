@@ -9,7 +9,7 @@ class HomeController extends Controller {
 
     public function index() 
     {
-        echo 'home';
+   echo  phpversion();
         
        // $code  = $_GET['code'];
        

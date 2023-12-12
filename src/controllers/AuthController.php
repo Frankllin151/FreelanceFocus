@@ -8,62 +8,103 @@ use core\Controller;
 use core\Database;
 use Google\Client;
 use Google\Service;
+use GuzzleHttp\Client as GuzzleClient;
+use src\models\Register;
 
-class AuthController extends Controller {
+use src\models\RegisterDao;
+
+class AuthController extends  Controller implements RegisterDao {
  private $db;
   public function __construct()
   {
     $this->db = new Database();
   }
 
-   public function LayoutLogin()
-   {
+  public function LayoutLogin()
+  {
+      $client = new GuzzleClient();
+      $clientId = '1018328527099-ah1brdp326ejb70jfurq7616jsa4g37l.apps.googleusercontent.com';
+      $clientSecret = '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';
+      $redirectUri = 'http://localhost:2221/cadastro';
+      $scope = 'email';
+  
+      $authUri = "https://accounts.google.com/o/oauth2/auth?" .
+          "client_id=$clientId&" .
+          "redirect_uri=$redirectUri&" .
+          "scope=$scope&" .
+          "response_type=code";
+  
+      if (isset($_GET['code'])) {
+          $tokenResponse = $client->post('https://oauth2.googleapis.com/token', [
+              'form_params' => [
+                  'code' => $_GET['code'],
+                  'client_id' => $clientId,
+                  'client_secret' => $clientSecret,
+                  'redirect_uri' => $redirectUri,
+                  'grant_type' => 'authorization_code',
+              ],
+          ]);
+  
+          $tokenData = json_decode($tokenResponse->getBody(), true);
+  
+          $idToken = $tokenData['id_token'];
+        $parts = explode('.', $idToken);
+        $decodedPayload = json_decode(base64_decode($parts[1]), true);
+        
+        $email = $decodedPayload['email'];
+      
+          $this->render('cadastro', ['emailgoogle' =>  $email]);
+      } else {
+          $this->render('cadastro', ['authUri' => $authUri]);
+      }
+  }
 
-    $client = new Client();
-    $client->setClientId('1018328527099-ah1brdp326ejb70jfurq7616jsa4g37l.apps.googleusercontent.com');
-    $client->setClientSecret('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');
-    $client->setRedirectUri('http://localhost:2221/cadastro');
-    $client->addScope('email');
+
+  public function findByEmail($emailpost){
+   
+    $email = $_POST['email-register'];
     
-    $authUri =  $client->createAuthUrl();
 
-    if(isset($_GET['code'])){
-      $token = $client->fetchAccessTokenWithAuthCode($_GET['code']);
+    $pdo = $this->db->getInstance();
+    
+    
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = :email");
+    
+
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+
+   
+    if($stmt->rowCount() > 0 ){
+        
+        $data = $stmt->fetch();
+
      
-      $client->setAccessToken($token);
-
-// Cria uma instância do serviço Oauth2 usando o cliente
-$oauth2 = new \Google\Service\Oauth2($client);
-
-// Obtém informações do usuário
-$userInfo = $oauth2->userinfo->get();
-
-// Exibe as informações do usuário
-
-
-$email = $userInfo->getEmail();
-
-
-// Exibe as informações do usuário
-
-$this->render('cadastro', ['emailgoogle' => $email]);
-    } else{
-      $this->render('cadastro' , ['authUri' => $authUri]); 
+        $register = new Register();
+        $register->setName($data['name']);
+        $register->setEmail($data['email']);
+        $register->setPassword($data['password']);
+        
+        
+        print_r($register);
+    } else {
+        return false;
     }
-    
-   }
+
+  }
 
    public function postActionCadrastro()
    {
-    $pdo = $this->db->getInstance();
-
-    // Agora você pode usar $pdo para executar consultas ou operações no banco de dados
-    $query = $pdo->query("SELECT * FROM users");
-    
-    // FetchAll retorna todos os resultados em um array associativo
-    $userData = $query->fetchAll();
-
-    return $userData;
-
+    $emailpost = $_POST['email-register'];
+    //$pdo = $this->db->getInstance();
+    $register = new RegisterDao();
+   
+   if( $register->findByEmail($emailpost) === false){
+        echo 'email  já registrado';
+   } else{
+     print_r($_POST);
    }
+     
+   }
+
 }

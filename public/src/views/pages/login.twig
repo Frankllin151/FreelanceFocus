@@ -1,7 +1,11 @@
+ <link rel="stylesheet" href="/assets/css/login.css">
+    {% include 'partials/header.twig' %}
 <div class="page-login-form">
     <div class="form">
+      <!---
         <div class="btn-login-google"><a href=""><img id="img-icon" src="/assets/image/icon-google.png" alt=""> <small>Faça login com google</small></a></div>
-        <form action="" method="post">
+      --->
+        <form action="/login" method="post">
             <label for="">Email:</label>
             <input name="email-login" type="email" required>
             <label for="">Senha:</label>

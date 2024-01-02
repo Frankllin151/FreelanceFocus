@@ -5,6 +5,7 @@ namespace src\controllers;
 
 //require_once "./src/handlers/RegisterHandle.php";
 
+use ClanCats\Hydrahon\Query\Sql\Func;
 use core\Controller;
 use core\Database;
 use src\Config;
@@ -87,10 +88,25 @@ class AuthController extends  Controller  {
         $register->InserirUsers($user);
    } else{
     $base = Config::BASE_DIR;
-   $this->render('home');
+  echo "Registrado";
    }
    
      
    }
 
+   public function LoginLayout()
+   {
+    
+          $this->render('login');
+     
+   }
+
+   public function ActionLogin()
+   {
+   
+    $email  = $_POST['email-login']; 
+    $password = $_POST['password-login']; 
+   
+  
+   }
 }

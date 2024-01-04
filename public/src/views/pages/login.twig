@@ -2,9 +2,9 @@
     {% include 'partials/header.twig' %}
 <div class="page-login-form">
     <div class="form">
-      <!---
-        <div class="btn-login-google"><a href=""><img id="img-icon" src="/assets/image/icon-google.png" alt=""> <small>Faça login com google</small></a></div>
-      --->
+     
+        <div class="btn-login-google"><a href="{{ authUri is defined ? authUri : '#' }}"><img id="img-icon" src="/assets/image/icon-google.png" alt=""> <small>Faça login com google</small></a></div>
+    
         <form action="/login" method="post">
             <label for="">Email:</label>
             <input name="email-login" type="email" required>

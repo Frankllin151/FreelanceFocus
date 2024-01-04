@@ -2,7 +2,7 @@
 namespace src\models;
 use \core\Model;
 
-class Register extends Model {
+class Login extends Model {
     private $id;
     private $name;
     private $email;

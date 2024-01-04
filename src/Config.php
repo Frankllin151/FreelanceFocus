@@ -1,8 +1,10 @@
 <?php
 namespace src;
 
+
+
 class Config {
-    const BASE_DIR = 'localhost:2221/public';
+    const BASE_DIR = 'localhost:2221';
 
     const DB_DRIVER = 'mysql';
     const DB_HOST = 'db';

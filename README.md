@@ -7,6 +7,6 @@
 ## **Type of Commit**
 
 
-- **mino:** SystemRegisterApi.
+- **Patch:** correção sistema de login.
 
 

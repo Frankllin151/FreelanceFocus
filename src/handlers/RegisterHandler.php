@@ -10,7 +10,7 @@ use src\controllers\AuthController;
 use src\models\Login;
 use src\models\Register;
 
-class RegisterHandler 
+class RegisterHandler  extends Controller
 {
 
     private $db;
@@ -96,38 +96,31 @@ class RegisterHandler
        
         if($stmt->rowCount() > 0 ){
             
-            $user = $stmt->fetch();
-    
-            if ($user) {
-              // Verifica se o token associado ao usuário está vazio
-              $token = $user['token'];
-          
-              if (empty($token)) {
-                  
-                 print_r('Redireciona para a tela de login');
-                  exit();
-              } else {
+          $user = $stmt->fetch();
+  
+          if ($user) {
+            // Verifica se o token associado ao usuário está vazio
+            $token = $user['token'];
+        
+            if (empty($token)) {
                 
-                $this->ReturnArrayData($user);
-                  
-                  exit();
-              }
-          } else {
-              print_r('nao encontrado email tela de cadasatro');
-              exit();
-          }
+              print_r('Redireciona para a tela de login');
+                exit();
+            } else {
+              
+            $_SESSION['user'] = $user;
+            header('Location: http://localhost:2221/dashboard/'.$user['id']);
+          
+            }
         } else {
-            return false;
+           print_r('nao encontrado email tela de cadasatro');
+            exit();
         }
+      } else {
+          return false;
+      }
       }
 
-      public function ReturnArrayData($user)
-      {
-        $base = Config::BASE_DIR;
-        header('Location: ' .  $base.'/'.'dashboard/' . $user['id'].'/'.$user['name'] );
-       
-        
-         
-        }
+   
 }
 

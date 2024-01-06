@@ -15,4 +15,4 @@ $router->get('/login' , 'AuthController@LoginLayout');
 $router->post('/login' , 'AuthController@ActionLogin');
 
 
-$router->get('/dashboard/{id}/{name}' , 'AuthController@LayoutDashboard');
+$router->get('/dashboard/{id}' , 'AuthController@LayoutDashboard');

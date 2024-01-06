@@ -107,7 +107,7 @@ class AuthController extends  Controller  {
         $register->InserirUsers($user);
    } else{
     $base = Config::BASE_DIR;
-  
+   echo "email já exister";
    }
    
      
@@ -146,7 +146,7 @@ class AuthController extends  Controller  {
       
       $email = $decodedPayload['email'];
       $this->authLogin($email);
-    
+     
     } else {
        
 
@@ -159,11 +159,13 @@ class AuthController extends  Controller  {
    public function authLogin($email)
    {
     $auth = new RegisterHandler();
-    $auth->ExistEmail($email);
-     if( $auth->ExistEmail($email) === false){
+   $data =  $auth->ExistEmail($email);
+     if( $data === false){
         print_r('ir cadastro');
      } else{
-        print_r('gm');
+    //print_r('painel');
+    $args = $_SESSION['user'];
+  
      }
     
    }
@@ -175,14 +177,11 @@ class AuthController extends  Controller  {
 
    public function LayoutDashboard($args)
    {
+
+    $this->render('painel', [
+      'id' =>  $args['id'],
      
-    if (empty($args)) {
-        echo "vazio vá para tela de login ";
-        return; 
-     }
-  
-      print_r($args);
-      
+  ]);
 
    }
 
